@@ -30,7 +30,7 @@ chrome.runtime.sendMessage('eiceogpklagmibnoccdincfglccflknk', { cap: true }, as
     }
     console.log(`streamId:${stream.id}`);
     const peer = new Peer(myId, {
-        key: 'd3d2c59d-d7e9-4095-899b-73df92874a68'
+        key: 'bea1e09a-a7f9-41fb-8700-e6d18ba907bd'
     });
     peer.on('open', id => {
         myIdDisp.textContent = id;
