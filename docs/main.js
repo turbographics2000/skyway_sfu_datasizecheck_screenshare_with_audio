@@ -15,15 +15,12 @@ chrome.runtime.sendMessage('eiceogpklagmibnoccdincfglccflknk', { cap: true }, as
                     chromeMediaSource: 'desktop',
                     chromeMediaSourceId: streamId
                 }
-            },
-            audio: {
-                mandatory: {
-                    chromeMediaSource: 'desktop',
-                    chromeMediaSourceId: streamId
-                }
             }
         });
-        appendVideo(stream);
+        const ac = new AudioContext();
+        const dst = ac.createMediaStreamDestination().stream;
+        const newStream = new MediaStream([stream.getVideoTracks()[0], dst.getAudioTracks()[0]]);
+        appendVideo(newStream);
     } catch (e) {
         console.error(e);
         return;
