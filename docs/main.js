@@ -2,6 +2,7 @@ const myId = (new MediaStream).id;
 console.log(`myId:${myId}`);
 function appendVideo(stream) {
     const video = document.createElement('video');
+    video.muted = true;
     video.srcObject = stream;
     document.body.appendChild(video);
     video.play();
